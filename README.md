@@ -1,11 +1,6 @@
-# jQuery json-viewer
+# jjv
 
-![npm](https://img.shields.io/npm/v/jquery.json-viewer.svg)
-![npm](https://img.shields.io/npm/l/jquery.json-viewer.svg)
-![npm](https://img.shields.io/npm/dt/jquery.json-viewer.svg)
-![workflow](https://github.com/abodelot/jquery.json-viewer/actions/workflows/node.js.yml/badge.svg)
-
-*json-viewer* is a jQuery plugin for easily displaying JSON objects by transforming them into HTML.
+*jjv* is a jQuery plugin for easily displaying JSON objects by transforming them into HTML.
 
 Features:
 - Syntax highlighting
@@ -14,7 +9,7 @@ Features:
 - Easily readable and minimal DOM structure
 - Optional support for libraries supporting big numbers
 
-Check out the [demo page](https://abodelot.github.io/jquery.json-viewer/demo.html)!
+Check out the [demo page](https://github.com/sallecta/jjv/demo)!
 
 ## Install
 
@@ -28,16 +23,16 @@ Make sure jQuery is already included. Then import `jquery.json-viewer.js` and `j
 
 ```html
 <head>
-  <script src="node_modules/jquery.json-viewer/json-viewer/jquery.json-viewer.js"></script>
-  <link href="node_modules/jquery.json-viewer/json-viewer/jquery.json-viewer.css" type="text/css" rel="stylesheet">
+    <script src="jjv/jquery-3.3.1.min.js"></script>
+    <script src="jjv/jjv.js"></script>
+    <link href="jjv/jjv.css" type="text/css" rel="stylesheet">
 </head>
 ```
 
-You can also simply copy `json-viewer/jquery.json-viewer.js` and `json-viewer/jquery.json-viewer.css` files from this git repository into your project.
 
 ## Usage
 
-Call the `jsonViewer()` method on target element and pass your JSON data in argument:
+Call the `jjv()` method on target element and pass your JSON data in argument:
 
 ```html
 <pre id="json-renderer"></pre>
@@ -47,12 +42,12 @@ Call the `jsonViewer()` method on target element and pass your JSON data in argu
 var data = {
   "foobar": "foobaz"
 };
-$('#json-renderer').jsonViewer(data);
+$('#json-renderer').jjv(data);
 ```
 
 ## Options
 
-The `jsonViewer` method accepts an optional config object as a second argument. The supported options are:
+The `jjv` method accepts an optional config object as a second argument. The supported options are:
 
 - `collapsed` (boolean, default: `false`): all nodes are collapsed at html generation.
 - `rootCollapsable` (boolean, default: `true`): allow root element to be collasped.
@@ -63,7 +58,7 @@ The `jsonViewer` method accepts an optional config object as a second argument. 
 Example:
 
 ```js
-$('#json-renderer').jsonViewer(data, {collapsed: true, withQuotes: true, withLinks: false});
+$('#json-renderer').jjv(data, {collapsed: true, withQuotes: true, withLinks: false});
 ```
 
 #### Big number support
@@ -76,7 +71,7 @@ Example Object using Decimal.js - other libraries are similar:
 var Decimal = require('decimal.js');
 var data = { "x": new Decimal(123) };
 
-$('#json-renderer').jsonViewer(data, {bigNumbers: false});
+$('#json-renderer').jjv(data, {bigNumbers: false});
 
 // {
 //   "x": {
@@ -89,7 +84,7 @@ $('#json-renderer').jsonViewer(data, {bigNumbers: false});
 //   }
 // }
 
-$('#json-renderer').jsonViewer(data, {bigNumbers: true});
+$('#json-renderer').jjv(data, {bigNumbers: true});
 
 // {
 //   "x": 123
