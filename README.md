@@ -9,7 +9,7 @@ Features:
 - Easily readable and minimal DOM structure
 - Optional support for libraries supporting big numbers
 
-Check out the [demo page](https://github.com/sallecta/jjv/demo)!
+Check out the [demo page](https://github.com/sallecta/jjv/tree/master/Demo)!
 
 ## Install
 
